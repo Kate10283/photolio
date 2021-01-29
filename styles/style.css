@@ -1,0 +1,169 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.container {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.container__button {
+  padding-bottom: 60px;
+}
+
+.fa-grip-horizontal {
+  font-size: 36px;
+  color: #595959;
+  float: right;
+  padding: 20px 15px;
+}
+
+.fa-grip-horizontal:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+/*    MENU     */
+.menu {
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+}
+
+.menu__button {
+  padding-bottom: 150px;
+}
+
+.fa-times {
+  font-size: 36px;
+  color: white;
+  float: right;
+  padding: 20px 15px;
+}
+
+.fa-times:hover {
+  color: black;
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+.menu__items a {
+  text-decoration: none;
+  color: #595959;
+  font-size: 36px;
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  padding: 13px;
+}
+
+.menu__items a:hover {
+  color: white;
+}
+
+/*   HEADER    */
+.header {
+  margin: 10px auto;
+}
+
+.logo {
+  color: #595959;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 34px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header__logo {
+  padding: 10px;
+}
+
+.text {
+  color: #595959;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header__text {
+  padding: 10px;
+}
+
+.button {
+  color: white;
+  background-color: #595959;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 15px;
+  border: none;
+}
+
+.header__button {
+  margin: 20px;
+}
+
+.button:hover {
+  color: #595959;
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+/*   PHOTOS   */
+.photos {
+  -ms-grid-columns: 33.33% 33.33% 33.33%;
+      grid-template-columns: 33.33% 33.33% 33.33%;
+  padding-bottom: 120px;
+}
+
+.photos__column img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  margin: -2px;
+}
+
+@media only screen and (max-width: 600px) {
+  .photos {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .photos {
+    display: -ms-grid;
+    display: grid;
+  }
+}
+
+/*    FOOTER     */
+.footer {
+  background-color: #f1f1f1;
+  padding: 60px;
+}
+
+.icons {
+  font-size: 24px;
+  color: #595959;
+}
+
+.icons i:hover {
+  opacity: 0.5;
+}
+
+.link {
+  text-decoration: underline;
+  color: #595959;
+}
+
+.link:hover {
+  color: #00b300;
+}
+
+.footer__inner {
+  padding: 25px;
+}
+/*# sourceMappingURL=style.css.map */

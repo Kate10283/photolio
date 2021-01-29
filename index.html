@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Photolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src='scripts/resize_photos.js'></script>
+</head>
+
+<body onresize="resize()">
+    <script>
+        function resize() {
+            var photos = document.querySelector('.photos');
+            var photos__column = document.querySelector('.photos__column');
+            var images = photos__column.getElementsByTagName('img');
+            if (window.innerWidth > 600) {
+                if (!document.querySelector('.grid')) {
+                    photos.style.gridTemplateColumns = '33.33% 33.33% 33.33%';
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.margin = '-2px';
+                    }
+                    // toBigWithoutGrid();
+                }
+                else {
+                    photos.style.gridTemplateColumns = '32% 32% 32%';
+                    photos.style.justifyContent = 'space-around';
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.margin = '4px';
+                    }
+                    // toBigGrid();
+                }
+            }
+            else {
+                if (!document.querySelector('.grid')) {
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.margin = '-2px';
+                    }
+                    // toSmallWithoutGrid();
+                }
+                else {
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.margin = '4px 20px';
+                    }
+                    // toSmallGrid();
+                }
+            }
+        }
+
+        function grid() {
+            var photos = document.querySelector('.photos');
+            var images = document.querySelector('.photos').getElementsByTagName('img');
+            if (window.innerWidth > 600) {
+                if (!document.querySelector('.grid')) {
+                    photos.classList.add('grid');
+                    photos.style.gridTemplateColumns = '32% 32% 32%';
+                    photos.style.justifyContent = 'space-around';
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.margin = '4px';
+                    }
+                }
+                else {
+                    photos.classList.remove('grid');
+                    photos.style.gridTemplateColumns = '33.33% 33.33% 33.33%';
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.margin = '-2px';
+                    }
+                }
+            }
+            else {
+                if (!document.querySelector('.grid')) {
+                    photos.classList.add('grid');
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.margin = '4px 20px';
+                    }
+                }
+                else {
+                    photos.classList.remove('grid');
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.margin = '-2px';
+                    }
+                }
+            }
+        }
+    </script>
+    <div class="menu">
+        <div class="menu__button">
+            <a onclick="document.querySelector('.menu').style.visibility = 'hidden'"><i class='fas fa-times'></i></a>
+        </div>
+        <div class="menu__items">
+            <a href="#">About</a>
+            <a href="#">Photos</a>
+            <a href="#">Shop</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container__button">
+            <a onclick="document.querySelector('.menu').style.visibility = 'visible'"><i
+                    class='fas fa-grip-horizontal'></i></a>
+        </div>
+        <div class="header">
+            <p class="logo header__logo">Photolio</p>
+            <p class="text header__text">A template made by ... for photographers.</p>
+            <button class="button header__button" type="button" onclick=grid()>Toggle Grid Padding</button>
+        </div>
+        <div class="photos">
+            <div class="photos__column">
+                <img src="images/rocks.jpg" alt="">
+                <img src="images/sound.jpg" alt="">
+                <img src="images/woods.jpg" alt="">
+                <img src="images/rock.jpg" alt="">
+                <img src="images/nature.jpg" alt="">
+                <img src="images/mist.jpg" alt="">
+            </div>
+            <div class="photos__column">
+                <img src="images/coffee.jpg" alt="">
+                <img src="images/bridge.jpg" alt="">
+                <img src="images/notebook.jpg" alt="">
+                <img src="images/london.jpg" alt="">
+                <img src="images/rocks.jpg" alt="">
+                <img src="images/avatar_g.jpg" alt="">
+            </div>
+            <div class="photos__column">
+                <img src="images/mist.jpg" alt="">
+                <img src="images/workbench.jpg" alt="">
+                <img src="images/gondol.jpg" alt="">
+                <img src="images/skies.jpg" alt="">
+                <img src="images/lights.jpg" alt="">
+                <img src="images/workshop.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="icons">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-snapchat"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin-in"></i>
+        </div>
+        <p class="text footer__inner">Powered by <a class="link" href="#">some kind of link</a></p>
+    </div>
+
+</body>
+
+</html>
